@@ -31,7 +31,10 @@
                                 <span>文件</span>
                             </template>
                             <el-menu-item-group>
-                                <el-menu-item index="/index/uploadBigFile">上传文件</el-menu-item>
+                                <el-menu-item index="/index/uploadFile">上传文件</el-menu-item>
+                            </el-menu-item-group>
+                            <el-menu-item-group>
+                                <el-menu-item index="/index/uploadBigFile">上传大文件</el-menu-item>
                             </el-menu-item-group>
                         </el-sub-menu></el-menu>
                 </el-col>

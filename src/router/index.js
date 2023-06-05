@@ -5,7 +5,6 @@
  * @FilePath: \yweb\src\router\index.js
  */
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
 import LoginView from '@/views/login/LoginView.vue';
 import IndexView from '@/views/layout/layout.vue';
 import UploadFileView from '@/views/file/UploadFileView.vue';
@@ -28,9 +27,14 @@ const routes = [
                 meta: { title: 'home', access: 0 }
             },
             {
-                path: '/index/uploadBigFile',
+                path: '/index/uploadFile',
                 name: 'uploadFile',
                 component: UploadFileView
+            },
+            {
+                path: '/index/UploadBigFile',
+                name: 'UploadBigFileView',
+                component: () => import('@/views/file/UploadBigFileView.vue')
             }
         ]
     }
