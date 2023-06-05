@@ -5,12 +5,12 @@
  * @FilePath: \yweb\src\views\layout\layout.vue
 -->
 <template>
-    <div>
-        <el-container style="height: 1000px; border: 1px solid #eee">
-            <el-aside width="200px">
+    <div class="vue-admin-beautiful-wrapper">
+        <el-container>
+            <el-aside class="aside">
                 <Menu></Menu>
             </el-aside>
-            <el-main>
+            <el-main class="main">
                 <router-view></router-view>
             </el-main>
         </el-container>
@@ -27,13 +27,31 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-header {
-    background-color: #B3C0D1;
-    color: #333;
-    line-height: 60px;
+.vue-admin-beautiful-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
-.el-aside {
-    color: #333;
+.main {
+    position: relative;
+    min-height: 100%;
+    margin-left: 256px;
+    // background: #f6f8f9;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border 0s, background 0s, color 0s, font-size 0s;
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 256px;
+    height: 100vh;
+    overflow: hidden;
+    background: #21252b;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.35);
+    transition: width 0.3s;
 }
 </style>

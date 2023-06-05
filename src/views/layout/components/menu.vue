@@ -6,50 +6,37 @@
 -->
 <template>
     <div>
-        <!-- <el-radio-group v-model="isCollapse" style="margin-bottom: 20px;">
-            <el-radio-button :label="false">展开</el-radio-button>
-            <el-radio-button :label="true">收起</el-radio-button>
-        </el-radio-group>  -->
-        <el-menu default-active="1-4-1" router class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
-            :collapse="isCollapse">
-            <el-sub-menu index="1">
-                <template #title>
-                    <el-icon>
-                        <location />
-                    </el-icon>
-                    <span>任务总览</span>
-                </template>
-                <el-menu-item-group>
-                    <el-menu-item index="/index/home">待办</el-menu-item>
-                    <el-menu-item index="12">已办</el-menu-item>
-                </el-menu-item-group>
-            </el-sub-menu>
-            <el-sub-menu index="2">
-                <template #title>
-                    <el-icon>
-                        <location />
-                    </el-icon>
-                    <span>文件</span>
-                </template>
-                <el-menu-item-group>
-                    <el-menu-item index="/index/uploadBigFile">上传文件</el-menu-item>
-                </el-menu-item-group>
-            </el-sub-menu>
-            <!-- <el-menu-item index="1">处理中心</el-menu-item>
-            <el-sub-menu index="2">
-                <template slot="title">我的工作台</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
-                <el-sub-menu index="2-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="2-4-2">选项2</el-menu-item>
-                    <el-menu-item index="2-4-3">选项3</el-menu-item>
-                </el-sub-menu>
-            </el-sub-menu>
-            <el-menu-item index="3" disabled>消息中心</el-menu-item>
-            <el-menu-item index="4"><a href="https://www.ele.me" target="_blank">订单管理</a></el-menu-item> -->
-        </el-menu>
+        <div>
+            <el-row>
+                <el-col>
+                    <el-menu background-color="#21252b" text-color="hsla(0, 0%, 100%, 0.95)"
+                        active-text-color="hsla(0, 0%, 100%, 0.95)" router>
+                        <el-sub-menu index="1">
+                            <template #title>
+                                <el-icon>
+                                    <location />
+                                </el-icon>
+                                <span>任务总览</span>
+                            </template>
+                            <el-menu-item-group>
+                                <el-menu-item index="/index/home">待办</el-menu-item>
+                                <el-menu-item index="12">已办</el-menu-item>
+                            </el-menu-item-group>
+                        </el-sub-menu>
+                        <el-sub-menu index="2">
+                            <template #title>
+                                <el-icon>
+                                    <location />
+                                </el-icon>
+                                <span>文件</span>
+                            </template>
+                            <el-menu-item-group>
+                                <el-menu-item index="/index/uploadBigFile">上传文件</el-menu-item>
+                            </el-menu-item-group>
+                        </el-sub-menu></el-menu>
+                </el-col>
+            </el-row>
+        </div>
     </div>
 </template>
 
@@ -72,8 +59,107 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 900px;
+.top-bar-container {
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1), border 0s,
+        background 0s, color 0s, font-size 0s;
+    height: 100%;
+    background: #21252b;
+
+    .vab-main {
+        background: #21252b;
+
+        ::v-deep {
+            .el-menu {
+                &.el-menu--horizontal {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    height: 65px;
+                    border-bottom: 0 solid transparent !important;
+
+                    .el-menu-item,
+                    .el-submenu__title {
+                        padding: 0 15px;
+                    }
+
+                    @media only screen and (max-width: 767px) {
+
+                        .el-menu-item,
+                        .el-submenu__title {
+                            padding: 0 8px;
+                        }
+
+                        li:nth-child(4),
+                        li:nth-child(5) {
+                            display: none !important;
+                        }
+                    }
+
+                    >.el-menu-item {
+                        height: 65px;
+                        line-height: 65px;
+                    }
+
+                    >.el-submenu {
+                        .el-submenu__title {
+                            height: 65px;
+                            line-height: 65px;
+                        }
+                    }
+                }
+
+                svg {
+                    width: 1rem;
+                    margin-right: 3px;
+                }
+
+                &--horizontal {
+                    .el-menu {
+
+                        .el-menu-item,
+                        .el-submenu__title {
+                            height: 50px;
+                            line-height: 50px;
+                        }
+                    }
+
+                    .el-submenu,
+                    .el-menu-item {
+                        &.is-active {
+                            background-color: #409eff !important;
+                            border-bottom: 0 solid transparent !important;
+
+                            .el-submenu__title {
+                                border-bottom: 0 solid transparent !important;
+                            }
+                        }
+                    }
+
+                    >.el-menu-item {
+                        .el-tag {
+                            margin-top: calc(65px / 2 - 7.5px);
+                            margin-left: 5px;
+                        }
+
+                        @media only screen and (max-width: 1199px) {
+                            .el-tag {
+                                display: none;
+                            }
+                        }
+
+                        &.is-active {
+                            background-color: transparent !important;
+                            border-bottom: 3px solid #409eff !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 </style>
