@@ -29,7 +29,7 @@ export default {
     methods: {
         getRoutes() {
             this.routesMenu = this.$router.options.routes[1].children;
-            console.log(this.routesMenu);
+            // console.log(this.routesMenu);
         }
     },
 }
