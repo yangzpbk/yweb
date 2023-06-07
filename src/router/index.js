@@ -9,32 +9,36 @@ import LoginView from '@/views/login/LoginView.vue';
 import IndexView from '@/views/layout/layout.vue';
 import UploadFileView from '@/views/file/UploadFileView.vue';
 
-const routes = [
+const constantRoutes = [
     {
         path: '/',
         name: 'login',
-        component: LoginView
+        component: LoginView,
+        meta: { title: '登录', noCache: true, affix: true }
     },
     {
         path: '/index',
         name: 'index',
         component: IndexView,
+        meta: { title: '首页', noCache: true, affix: true},
         children: [
             {
                 path: "/index/home",
                 name: 'home',
                 component: () => import('@/views/HomeView.vue'),
-                meta: { title: 'home', access: 0 }
+                meta: { title: '待办', noCache: true, affix: true}
             },
             {
                 path: '/index/uploadFile',
                 name: 'uploadFile',
-                component: UploadFileView
+                component: UploadFileView,
+                meta: { title: '上传文件5m', noCache: true, affix: true }
             },
             {
                 path: '/index/UploadBigFile',
                 name: 'UploadBigFileView',
-                component: () => import('@/views/file/UploadBigFileView.vue')
+                component: () => import('@/views/file/UploadBigFileView.vue'),
+                meta: { title: '上传文件大文件', noCache: true, affix: true }
             }
         ]
     }
@@ -42,7 +46,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
-    routes
+    routes: constantRoutes
 })
 
 export default router

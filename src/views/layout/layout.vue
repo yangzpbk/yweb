@@ -8,7 +8,7 @@
     <div class="vue-admin-beautiful-wrapper">
         <el-container>
             <el-aside class="aside">
-                <Menu></Menu>
+                <side-bar-menu></side-bar-menu>
             </el-aside>
             <el-main class="main">
                 <router-view></router-view>
@@ -18,10 +18,10 @@
 </template>
 
 <script>
-import Menu from "@/views/layout/components/menu.vue"
+import SideBarMenu from "@/views/layout/components/SideBarMenu.vue";
 export default {
     components: {
-        Menu,
+        SideBarMenu,
     },
 }
 </script>
