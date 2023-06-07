@@ -20,26 +20,42 @@ const constantRoutes = [
         path: '/index',
         name: 'index',
         component: IndexView,
-        meta: { title: '首页', noCache: true, affix: true},
+        meta: { title: '首页', noCache: true, affix: true },
         children: [
             {
-                path: "/index/home",
-                name: 'home',
+                name: 'backlog',
+                path: "/index/backlog",
                 component: () => import('@/views/HomeView.vue'),
-                meta: { title: '待办', noCache: true, affix: true}
+                meta: { title: '任务处理', noCache: true, affix: true },
+                children: [
+                    {
+                        path: "/index/backlog/MyAllBacklog",
+                        name: 'MyAllBacklog',
+                        component: () => import('@/views/backlog/MyAllBacklog.vue'),
+                        meta: { title: '我的所有待办', noCache: true, affix: true },
+                    },
+                ]
             },
             {
-                path: '/index/uploadFile',
-                name: 'uploadFile',
-                component: UploadFileView,
-                meta: { title: '上传文件5m', noCache: true, affix: true }
+                name: 'file',
+                path: "/index/file",
+                component: () => import('@/views/HomeView.vue'),
+                meta: { title: '文件管理', noCache: true, affix: true },
+                children: [
+                    {
+                        path: '/index/file/uploadFile',
+                        name: 'uploadFile',
+                        component: UploadFileView,
+                        meta: { title: '上传文件5m', noCache: true, affix: true }
+                    },
+                    {
+                        path: '/index/file/UploadBigFile',
+                        name: 'UploadBigFileView',
+                        component: () => import('@/views/file/UploadBigFileView.vue'),
+                        meta: { title: '上传文件大文件', noCache: true, affix: true }
+                    }
+                ]
             },
-            {
-                path: '/index/UploadBigFile',
-                name: 'UploadBigFileView',
-                component: () => import('@/views/file/UploadBigFileView.vue'),
-                meta: { title: '上传文件大文件', noCache: true, affix: true }
-            }
         ]
     }
 ]
