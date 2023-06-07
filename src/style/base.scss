@@ -55,11 +55,22 @@
     text-align: center;
 }
 
-.keyword{
-  width: 220px;
-  margin: 0 0 0 30px;
+.keyword {
+    width: 220px;
+    margin: 0 0 0 30px;
 }
 
 #nprogress .bar {
     background: #4D70FF !important; //自定义颜色
+}
+
+.baseBlueColor {
+    color: #409eff;
+}
+
+.baseIcon {
+    color: #409eff;
+    width: 3em;
+    height: 3em;
+    margin-right: 8px
 }

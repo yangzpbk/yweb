@@ -11,9 +11,9 @@
                 <el-upload class="upload-demo" drag :http-request="uploadFile" multiple>
                     <!-- <i class="el-icon-upload"></i> -->
                     <!-- <Edit style="width: 1em; height: 1em; margin-right: 8px" /> -->
-                    <UploadFilled style="width: 3em; height: 3em; margin-right: 8px"/>
+                    <UploadFilled class="baseIcon"/>
                     <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                    <!-- <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div> -->
+                    <div class="el-upload__tip" slot="tip">只能上传不超过5m的文件</div>
                 </el-upload>
             </el-col>
         </el-row>
@@ -33,7 +33,7 @@ export default {
             // 上传图片方法
             const params = new FormData()
             params.append('file', content.file)
-            this.$service.post('/yangzp/api/fileoper/upLoadFile', params).then(res => {
+            this.$service.post(this.yangzpApi.file.upLoadFile, params).then(res => {
                 this.$message({
                     message: 'success!',
                     grouping: true,
