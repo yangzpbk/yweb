@@ -6,7 +6,7 @@
  */
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '@/views/login/LoginView.vue';
-import IndexView from '@/views/layout/layout.vue';
+import Layout from '@/views/layout/layout.vue';
 import UploadFileView from '@/views/file/UploadFileView.vue';
 
 const constantRoutes = [
@@ -19,7 +19,7 @@ const constantRoutes = [
     {
         path: '/index',
         name: 'index',
-        component: IndexView,
+        component: Layout,
         meta: { title: '首页', noCache: true, affix: true },
         children: [
             {
