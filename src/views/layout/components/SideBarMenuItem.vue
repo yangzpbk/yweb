@@ -14,7 +14,7 @@
                 </el-icon>
                 <span>{{ item.meta.title }}</span>
             </template>
-            <menu-tree :menuList="item.children"></menu-tree>
+            <side-bar-menu-item :menuList="item.children"></side-bar-menu-item>
         </el-sub-menu>
         <el-menu-item v-else :index="item.path">
             <el-icon>

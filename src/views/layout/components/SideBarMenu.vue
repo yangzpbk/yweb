@@ -8,7 +8,7 @@
     <div>
         <el-menu background-color="#21252b" text-color="hsla(0, 0%, 100%, 0.95)" active-text-color="hsla(0, 0%, 100%, 0.95)"
             router>
-            <side-bar-menu-item :menuList="routes" />
+            <side-bar-menu-item :menuList="routesMenu" />
         </el-menu>
     </div>
 </template>
@@ -22,7 +22,7 @@ export default {
     },
     data() {
         return {
-            routes: []
+            routesMenu: []
         }
     },
     mounted() {
@@ -30,40 +30,11 @@ export default {
     },
     methods: {
         getRoutes() {
-            this.routes = this.$router.options.routes.slice(1)[0].children;
-            console.log(this.routes);
+            this.routesMenu = this.$router.options.routes;
+            console.log(this.routesMenu);
         }
     },
 }
 </script>
 
 <style lang="scss" scoped></style>
-
-
-
-                    <!-- <el-sub-menu index="1">
-                        <template #title>
-                            <el-icon>
-                                <location />
-                            </el-icon>
-                            <span>任务总览</span>
-                        </template>
-                        <el-menu-item-group>
-                            <el-menu-item index="/index/home">待办</el-menu-item>
-                            <el-menu-item index="12">已办</el-menu-item>
-                        </el-menu-item-group>
-                    </el-sub-menu>
-                    <el-sub-menu index="2">
-                        <template #title>
-                            <el-icon>
-                                <location />
-                            </el-icon>
-                            <span>文件</span>
-                        </template>
-                        <el-menu-item-group>
-                            <el-menu-item index="/index/uploadFile">上传文件</el-menu-item>
-                        </el-menu-item-group>
-                        <el-menu-item-group>
-                            <el-menu-item index="/index/uploadBigFile">上传大文件</el-menu-item>
-                        </el-menu-item-group>
-                    </el-sub-menu> -->

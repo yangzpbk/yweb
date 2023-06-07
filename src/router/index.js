@@ -25,7 +25,7 @@ const constantRoutes = [
             {
                 name: 'backlog',
                 path: "/index/backlog",
-                component: () => import('@/views/HomeView.vue'),
+                // component: () => import('@/views/HomeView.vue'),
                 meta: { title: '任务处理', noCache: true, affix: true },
                 children: [
                     {
@@ -39,7 +39,7 @@ const constantRoutes = [
             {
                 name: 'file',
                 path: "/index/file",
-                component: () => import('@/views/HomeView.vue'),
+                // component: () => import('@/views/HomeView.vue'),
                 meta: { title: '文件管理', noCache: true, affix: true },
                 children: [
                     {
