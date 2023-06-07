@@ -35,3 +35,13 @@ export default {
     },
 }
 </script>
+<style  scoped>
+.el-menu-item .is-active {
+    background-color: #13f4e5 !important;
+    color: #fff;
+
+    /* span {
+        color: #fff !important;
+    } */
+}
+</style>

@@ -39,13 +39,4 @@ export default {
 .menuEle {
     min-height: 100%;
 }
-
-.el-menu-item .is-active {
-    background-color: #ff335c !important;
-    color: #fff;
-
-    span {
-        color: #fff !important;
-    }
-}
 </style>
