@@ -7,12 +7,19 @@
 <template>
     <div class="vue-admin-beautiful-wrapper">
         <el-row style="padding: 0 !important;">
-            <el-col :span="4" class="aside">
+            <el-container>
+                <el-header>Header</el-header>
+                <el-container>
+                    <el-aside><side-bar-menu class="aside"></side-bar-menu></el-aside>
+                    <el-main><router-view></router-view></el-main>
+                </el-container>
+            </el-container>
+            <!-- <el-col :span="4" class="aside">
                 <side-bar-menu></side-bar-menu>
             </el-col>
             <el-col :span="20" justify="center">
                 <router-view></router-view>
-            </el-col>
+            </el-col> -->
         </el-row>
     </div>
 </template>
