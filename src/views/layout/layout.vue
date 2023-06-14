@@ -8,17 +8,11 @@
     <div class="vue-admin-beautiful-wrapper">
         <el-row style="padding: 0 !important;">
             <el-container>
-                <el-aside>
+                <el-aside width="auto">
                     <side-bar-menu class="aside"></side-bar-menu>
                 </el-aside>
                 <el-main><router-view></router-view></el-main>
             </el-container>
-            <!-- <el-col :span="4" class="aside">
-                <side-bar-menu></side-bar-menu>
-            </el-col>
-            <el-col :span="20" justify="center">
-                <router-view></router-view>
-            </el-col> -->
         </el-row>
     </div>
 </template>
@@ -42,8 +36,8 @@ export default {
 
 .aside {
     height: 100vh;
-    box-shadow: 2px 0 6px rgba(0, 21, 41, 0.1);
+    // box-shadow: 2px 0 6px rgba(0, 21, 41, 0.1);
     transition: width 0.3s;
-    width: 210px !important
+    width: 210px !important;
 }
 </style>
