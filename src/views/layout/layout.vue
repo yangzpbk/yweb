@@ -8,11 +8,10 @@
     <div class="vue-admin-beautiful-wrapper">
         <el-row style="padding: 0 !important;">
             <el-container>
-                <el-header>Header</el-header>
-                <el-container>
-                    <el-aside><side-bar-menu class="aside"></side-bar-menu></el-aside>
-                    <el-main><router-view></router-view></el-main>
-                </el-container>
+                <el-aside>
+                    <side-bar-menu class="aside"></side-bar-menu>
+                </el-aside>
+                <el-main><router-view></router-view></el-main>
             </el-container>
             <!-- <el-col :span="4" class="aside">
                 <side-bar-menu></side-bar-menu>

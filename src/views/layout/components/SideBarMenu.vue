@@ -5,8 +5,8 @@
  * @FilePath: \yweb\src\views\layout\components\SideBarMenu.vue
 -->
 <template>
-    <!-- background-color="#21252b" text-color="hsla(0, 0%, 100%, 0.95)" -->
-    <el-menu class="menuEle" menu-trigger="hover" unique-opened router>
+    <el-menu class="menuEle" active-text-color="#ffd04b" text-color="#fff" background-color="#545c64" menu-trigger="hover" unique-opened
+        router>
         <side-bar-menu-item :menuList="routesMenu" />
     </el-menu>
 </template>

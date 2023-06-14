@@ -7,7 +7,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LoginView from '@/views/login/LoginView.vue';
 import Layout from '@/views/layout/layout.vue';
-import UploadFileView from '@/views/file/UploadFileView.vue';
 
 const constantRoutes = [
     {
@@ -25,7 +24,6 @@ const constantRoutes = [
             {
                 name: 'backlog',
                 path: "/index/backlog",
-                // component: () => import('@/views/HomeView.vue'),
                 meta: { title: '任务处理', noCache: true, affix: true },
                 children: [
                     {
@@ -39,13 +37,12 @@ const constantRoutes = [
             {
                 name: 'file',
                 path: "/index/file",
-                // component: () => import('@/views/HomeView.vue'),
                 meta: { title: '文件管理', noCache: true, affix: true },
                 children: [
                     {
                         path: '/index/file/uploadFile',
                         name: 'uploadFile',
-                        component: UploadFileView,
+                        component: () => import('@/views/file/UploadFileView.vue'),
                         meta: { title: '上传文件5m', noCache: true, affix: true }
                     },
                     {
@@ -56,6 +53,19 @@ const constantRoutes = [
                     }
                 ]
             },
+            {
+                name: 'form',
+                path: "/index/form",
+                meta: { title: '表单管理', noCache: true, affix: true },
+                children: [
+                    {
+                        path: '/index/form/moreStepForm',
+                        name: 'moreStepForm',
+                        component: () => import('@/views/form/moreStepForm.vue'),
+                        meta: { title: '分步表单', noCache: true, affix: true }
+                    }
+                ]
+            }
         ]
     }
 ]

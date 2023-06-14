@@ -5,19 +5,15 @@
  * @FilePath: \yweb\src\views\file\UploadFileView.vue
 -->
 <template>
-    <div>
-        <el-row type="flex" class="row-bg" justify="center">
-            <el-col :span="6">
-                <el-upload class="upload-demo" drag :http-request="uploadFile" multiple>
-                    <!-- <i class="el-icon-upload"></i> -->
-                    <!-- <Edit style="width: 1em; height: 1em; margin-right: 8px" /> -->
-                    <UploadFilled class="baseIcon"/>
-                    <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                    <div class="el-upload__tip" slot="tip">只能上传不超过5m的文件</div>
-                </el-upload>
-            </el-col>
-        </el-row>
-    </div>
+    <el-row type="flex" class="row-bg" justify="center">
+        <el-col :span="6">
+            <el-upload class="upload-demo" drag :http-request="uploadFile" multiple>
+                <UploadFilled class="baseIcon" />
+                <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+                <div class="el-upload__tip" slot="tip">只能上传不超过5m的文件</div>
+            </el-upload>
+        </el-col>
+    </el-row>
 </template>
 
 <script>
