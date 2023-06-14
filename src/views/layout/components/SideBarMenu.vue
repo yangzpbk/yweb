@@ -7,7 +7,9 @@
 <template>
     <el-menu class="menuEle" active-text-color="#ffd04b" text-color="#fff" background-color="#545c64" menu-trigger="hover" unique-opened
         router>
-        <side-bar-menu-item :menuList="routesMenu" />
+        <el-scrollbar wrap-class="scrollbar-wrapper">
+            <side-bar-menu-item :menuList="routesMenu" />
+        </el-scrollbar>
     </el-menu>
 </template>
 

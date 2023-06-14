@@ -54,5 +54,3 @@ export default {
     },
 }
 </script>
-
-<style lang="scss" scoped>@import "@/style/newLogin.scss";</style>

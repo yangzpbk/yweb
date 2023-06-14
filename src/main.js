@@ -14,6 +14,8 @@ import service from "@/utils/service.js";
 import yangzpApi from "@/api/yangzpApi.js";
 import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 
+// 引入初始化样式
+import '@/style/main.scss' // global css
 
 const app = createApp(App);
 app.config.globalProperties.$service = service;
