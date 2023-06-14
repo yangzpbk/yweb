@@ -44,5 +44,6 @@ export default {
     height: 100vh;
     box-shadow: 2px 0 6px rgba(0, 21, 41, 0.1);
     transition: width 0.3s;
+    width: 210px !important
 }
 </style>

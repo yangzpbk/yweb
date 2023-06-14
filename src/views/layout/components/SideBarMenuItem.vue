@@ -16,7 +16,7 @@
             </template>
             <side-bar-menu-item :menuList="item.children"></side-bar-menu-item>
         </el-sub-menu>
-        <el-menu-item v-else :index="item.path">
+        <el-menu-item v-else :index="item.path"  class="submenu-title-noDropdown">
             <el-icon>
                 <MagicStick />
             </el-icon>
@@ -31,6 +31,10 @@ export default {
         menuList: {
             type: Array,
             default: []
+        },
+        isNest: {
+            type: Boolean,
+            default: false
         },
     },
 }
